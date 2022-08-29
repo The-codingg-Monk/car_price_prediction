@@ -7,14 +7,97 @@
     <title>Car price prediction</title>
 </head>
 <body>
-    <form action ="Prediction" method="Post">
+    <form action ="prediction" method="Post">
         <label>Seller Type: </label>
         <select name="seller_type">
             <option value='Individual'>Individual</option>
             <option value='Dealer'>Dealer</option>
             <option value='Trustmark Dealer'>Trustmark Dealer</option>
         </select>
-    </form>
+        <label>Fuel Type: </label>
+        <select name="fuel_type">
+            <option value='Petrol'>Petrol</option>
+            <option value='Diesel'>Diesel</option>
+            <option value='CNG'>CNG</option>
+            <option value='LPG'>LPG</option>
+            <option value='Electric'>Electric</option>
+        </select>
+        <label>Transmission Type: </label>
+        <select name="transmission_type">
+            <option value='Manual'>Manual</option>
+            <option value='Automatic'>Automatic</option>
+        </select>
+        <label>No. of Seats: </label>
+        <select name="seats">
+            <option value='Seats5'>Seats5</option>
+            <option value='Seats7'>Seats7</option>
+            <option value='Seats8'>Seats8</option>
+            <option value='Seats4'>Seats4</option>
+            <option value='Seats6'>Seats6</option>
+            <option value='Seats2'>Seats2</option>
+            <option value='Seats9'>Seats9</option>
+            <option value='Seats10'>Seats10</option>
+            <option value='Seats14'>Seats14</option>
+        </select>
+        <label>brand: </label>
+        <select name="brand">
+            <option value='Maruti'>Maruti</option>
+            <option value='Hyundai'>Hyundai</option>
+            <option value='Ford'>Ford</option>
+            <option value='Mahindra'>Mahindra</option>
+            <option value='Tata'>Tata</option>
+            <option value='Renault'>Renault</option>
+            <option value='Nissan'>Nissan</option>
+            <option value='Mini'>Mini</option>
+            <option value='Mercedes-Benz'>Mercedes-Benz</option>
+            <option value='Toyota'>Toyota</option>
+            <option value='Fiat'>Fiat</option>
+            <option value='Volkswagen'>Volkswagen</option>
+            <option value='Honda'>Honda</option>
+            <option value='Chevrolet'>Chevrolet</option>
+            <option value='Ambassador'>Ambassador</option>
+            <option value='Datsun'>Datsun</option>
+            <option value='Kia'>Kia</option>
+            <option value='BMW'>BMW</option>
+            <option value='Mitsubishi'>Mitsubishi</option>
+            <option value='Audi'>Audi</option>
+            <option value='Skoda'>Skoda</option>
+            <option value='Land'>Land</option>
+            <option value='Jaguar'>Jaguar</option>
+            <option value='Daewoo'>Daewoo</option>
+            <option value='Bentley'>Bentley</option>
+            <option value='MG'>MG</option>
+            <option value='Isuzu'>Isuzu</option>
+            <option value='Porsche'>Porsche</option>
+            <option value='Volvo'>Volvo</option>
+            <option value='Lexus'>Lexus</option>
+            <option value='Jeep'>Jeep</option>
+            <option value='Premier'>Premier</option>
+            <option value='Maserati'>Maserati</option>
+            <option value='Force'>Force</option>
+            <option value='Lamborghini'>Lamborghini</option>
+            <option value='ISUZU'>ISUZU</option>
+            <option value='Ferrari'>Ferrari</option>
+            <option value='OpelCorsa'>OpelCorsa</option>
+            <option value='Mercedes-AMG'>Mercedes-AMG</option>
+            <option value='DC'>DC</option>
+            <option value='Rolls-Royce'>Rolls-Royce</option>
+            <option value='Opel'>Opel</option>
+
+        </select>
+        <label>Kms driven: </label>
+        <input type="text" name="km_driven">
+        <label>Age of car: </label>
+        <input type='text' name='age'>
+        <label>Milage (km/ltr): </label>
+        <input type='text' name='mileage_new'>
+        <label>Max power (bhp): </label>
+        <input type='text' name='max_power_new'>
+        <label>Engine capacity (cc): </label>
+        <input type='text' name='engine_new'>
+        <input type="submit" value="submit">
+    </form><br><br>
+    <label>Best predicted price: {{result}}</label>
     
 </body>
 </html>
