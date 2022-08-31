@@ -16,9 +16,12 @@ def prediction():
     mileage_new=request.form["mileage_new"]
     max_power_new=request.form["max_power_new"]
     engine_new=request.form["engine_new"]
+    if km_driven and age and mileage_new and max_power_new and engine_new:
 
-    obj=utils.pred(seller_type,fuel_type,transmission_type,seats,brand,km_driven,age,mileage_new,max_power_new,engine_new)
-    result=obj.fun()
+        obj=utils.pred(seller_type,fuel_type,transmission_type,seats,brand,km_driven,age,mileage_new,max_power_new,engine_new)
+        result=obj.fun()
+    else:
+        result="Please enter all values."
     
     return render_template("index.html",result=result)
 
