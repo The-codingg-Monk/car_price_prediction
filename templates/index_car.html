@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car price prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        .input {
+            width: 35%;
+            display: block;
+            position: relative;
+            left: 56%;
+            margin:-2%;
+            height:4vh;
+        }
+
+        .select {
+
+            width: 35%;
+            display: block;
+            position: relative;
+            left: 56%;
+            margin:-2%;
+            
+        }
+
+
+        .label {
+            position: relative;
+            left: 12%;
+            top: 3vh;
+            font-family: 'DynaPuff', cursive;
+
+        }
+
+        .submit {
+            position: relative;
+            left: 65%;
+            top: 3vh;
+            font-family: 'DynaPuff', cursive;
+            border-radius: 2vh;
+            color: blueviolet;
+            border-color: blue;
+
+        }
+
+        .result {
+            position: relative;
+            left: 12%;
+            top: 3vh;
+            font-family: 'DynaPuff', cursive;
+
+        }
+
+        .pred_result {
+            position: relative;
+            left: 16%;
+            top: 3vh;
+            font-family: 'DynaPuff', cursive;
+
+        }
+
+        h2 {
+            position: relative;
+            left: 21%;
+            top: 1vh;
+            font-family: 'DynaPuff', cursive;
+
+        }
+
+        .main{
+            background-color: rgb(243, 231, 174);
+            width: 40vw;
+            height: 90vh;
+            position:relative;
+            left: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <h2>Car Price Prediction</h2>
+
+        <form action="prediction" method="Post">
+            <label class="label">Seller Type: </label>
+
+            <select name="seller_type" class="select">
+                <option value='Individual'>Individual</option>
+                <option value='Dealer'>Dealer</option>
+                <option value='Trustmark Dealer'>Trustmark Dealer</option>
+            </select>
+            <label class="label">Fuel Type: </label>
+            <select name="fuel_type" class="select">
+                <option value='Petrol'>Petrol</option>
+                <option value='Diesel'>Diesel</option>
+                <option value='CNG'>CNG</option>
+                <option value='LPG'>LPG</option>
+                <option value='Electric'>Electric</option>
+            </select>
+            <label class="label">Transmission Type: </label>
+            <select name="transmission_type" class="select">
+                <option value='Manual'>Manual</option>
+                <option value='Automatic'>Automatic</option>
+            </select>
+            <label class="label">No. of Seats: </label>
+            <select name="seats" class="select">
+                <option value='Seats5'>Seats5</option>
+                <option value='Seats7'>Seats7</option>
+                <option value='Seats8'>Seats8</option>
+                <option value='Seats4'>Seats4</option>
+                <option value='Seats6'>Seats6</option>
+                <option value='Seats2'>Seats2</option>
+                <option value='Seats9'>Seats9</option>
+                <option value='Seats10'>Seats10</option>
+                <option value='Seats14'>Seats14</option>
+            </select>
+            <label class="label">Brand: </label>
+            <select name="brand" class="select">
+                <option value='Maruti'>Maruti</option>
+                <option value='Hyundai'>Hyundai</option>
+                <option value='Ford'>Ford</option>
+                <option value='Mahindra'>Mahindra</option>
+                <option value='Tata'>Tata</option>
+                <option value='Renault'>Renault</option>
+                <option value='Nissan'>Nissan</option>
+                <option value='Mini'>Mini</option>
+                <option value='Mercedes-Benz'>Mercedes-Benz</option>
+                <option value='Toyota'>Toyota</option>
+                <option value='Fiat'>Fiat</option>
+                <option value='Volkswagen'>Volkswagen</option>
+                <option value='Honda'>Honda</option>
+                <option value='Chevrolet'>Chevrolet</option>
+                <option value='Ambassador'>Ambassador</option>
+                <option value='Datsun'>Datsun</option>
+                <option value='Kia'>Kia</option>
+                <option value='BMW'>BMW</option>
+                <option value='Mitsubishi'>Mitsubishi</option>
+                <option value='Audi'>Audi</option>
+                <option value='Skoda'>Skoda</option>
+                <option value='Land'>Land</option>
+                <option value='Jaguar'>Jaguar</option>
+                <option value='Daewoo'>Daewoo</option>
+                <option value='Bentley'>Bentley</option>
+                <option value='MG'>MG</option>
+                <option value='Isuzu'>Isuzu</option>
+                <option value='Porsche'>Porsche</option>
+                <option value='Volvo'>Volvo</option>
+                <option value='Lexus'>Lexus</option>
+                <option value='Jeep'>Jeep</option>
+                <option value='Premier'>Premier</option>
+                <option value='Maserati'>Maserati</option>
+                <option value='Force'>Force</option>
+                <option value='Lamborghini'>Lamborghini</option>
+                <option value='ISUZU'>ISUZU</option>
+                <option value='Ferrari'>Ferrari</option>
+                <option value='OpelCorsa'>OpelCorsa</option>
+                <option value='Mercedes-AMG'>Mercedes-AMG</option>
+                <option value='DC'>DC</option>
+                <option value='Rolls-Royce'>Rolls-Royce</option>
+                <option value='Opel'>Opel</option>
+
+            </select>
+
+            <label class="label">Kms Driven: </label>
+            <input type="number" name="km_driven" class="input" placeholder="Enter numeric value">
+            <label class="label">Age of Car: </label>
+            <input type='number' name='age' class="input" placeholder="Enter numeric value">
+            <label class="label">Mileage (km/ltr): </label>
+            <input type='number' name='mileage_new' class="input" placeholder="Enter numeric value">
+            <label class="label">Max Power (bhp): </label>
+            <input type='number' name='max_power_new' class="input" placeholder="Enter numeric value">
+            <label class="label">Engine Capacity (cc): </label>
+            <input type='number' name='engine_new' class="input" placeholder="Enter numeric value">
+            <input class="submit" type="submit" value="submit">
+        </form><br><br>
+        <label class="result">Best Predicted Price : </label><label class="pred_result">{{result}}</label>
+    </div>
+
+
+
+</body>
+
+</html>

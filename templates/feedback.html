@@ -18,11 +18,26 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
     <title>feedback</title>
     <style>
-        .form-control {
-            height: 30vh;
+        .form{
+            margin:1vw;
+
+        }
+       #formGroupExampleInput1 {
+
+            height: 3vh;
+            width: 15vw;
+            background-color: rgb(224, 231, 233);
+            border: 2px solid rgb(70, 16, 156);
+            
+        }
+        #formGroupExampleInput2{
+            height: 12vh;
+            width: 2vw;height: 30vh;
             width: 40vw;
             background-color: rgb(224, 231, 233);
             border: 2px solid rgb(70, 16, 156);
+
+
         }
 
         label {
@@ -31,14 +46,26 @@
         body{
             background-color: rgb(243, 231, 174);
         }
+        #submit{
+            font-family: 'DynaPuff', cursive;
+            border-color: blue;
+
+            border-radius: 1vw;
+
+        }
+
     </style>
 </head>
 
 <body>
-    <form>
+    <form class="form">
         <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control"  id="formGroupExampleInput1">
             <label for="formGroupExampleInput">Please write your feedback here.</label>
-            <input type="text" class="form-control" id="formGroupExampleInput">
+            <input type="text" class="form-control" id="formGroupExampleInput2"><br>
+            <a class="btn btn-danger" href="sub_feed.html" role="button" id="submit">Submit Feedback</a>
+
         </div>
 
     </form>
