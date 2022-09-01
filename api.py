@@ -3,7 +3,7 @@ import utils
 app=Flask(__name__)
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index_car.html")
 @app.route("/prediction",methods=["POST"])
 def prediction():
     seller_type=request.form["seller_type"]
@@ -12,7 +12,7 @@ def prediction():
     seats=request.form["seats"]
     brand=request.form["brand"]
     km_driven=request.form["km_driven"]
-    age=request.form["age"]
+    age=request.form["age"] 
     mileage_new=request.form["mileage_new"]
     max_power_new=request.form["max_power_new"]
     engine_new=request.form["engine_new"]
@@ -23,7 +23,7 @@ def prediction():
     else:
         result="Please enter all values."
     
-    return render_template("index.html",result=result)
+    return render_template("index_car.html",result=result)
 
 
 if __name__=="__main__":
